@@ -6,20 +6,19 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.runners.MockitoJUnitRunner;
 
+import com.capgemini.chess.DatabaseMockupObject;
 import com.capgemini.chess.dataaccess.dao.ChallengeDao;
 import com.capgemini.chess.enums.ChallengeStatus;
-import com.capgemini.chess.service.impl.DatabaseConfigurationForTest;
 import com.capgemini.chess.service.to.ChallengeTO;
 
 @RunWith(MockitoJUnitRunner.class)
 public class ChallengeDaoImplTest {
 
-	
 	private ChallengeDao challengeDao;
 
 	@Before
 	public void prepareUserDao(){
-		DatabaseConfigurationForTest daoConfig = new DatabaseConfigurationForTest();
+		DatabaseMockupObject daoConfig = new DatabaseMockupObject();
 		challengeDao = daoConfig.prepareChallengeDao();
 	}
 	

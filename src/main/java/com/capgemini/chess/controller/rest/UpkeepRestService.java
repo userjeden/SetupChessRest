@@ -15,7 +15,7 @@ import com.capgemini.chess.service.to.ChallengeTO;
 @Controller
 @ResponseBody
 @RequestMapping("/upkeep")
-public class ChessUpkeepRestService {
+public class UpkeepRestService {
 
 	@Autowired
 	UpkeepService upkeepService;

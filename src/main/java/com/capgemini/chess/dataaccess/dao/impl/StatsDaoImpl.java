@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Set;
 import org.springframework.stereotype.Repository;
 
+import com.capgemini.chess.DatabaseInstCounter;
 import com.capgemini.chess.dataaccess.dao.StatsDao;
 import com.capgemini.chess.dataaccess.entities.UserEntity;
 import com.capgemini.chess.service.mapper.CommonMapper;
@@ -17,14 +18,16 @@ public class StatsDaoImpl implements StatsDao {
 
 	public StatsDaoImpl() {
 		this.users = new HashSet<>();
-		System.out.println("STATS REPOSITORY CONTENT:");
-		this.users.forEach(System.out::println);
+		int num = DatabaseInstCounter.statsDaoCount ++;
+		System.err.println("STATS REPOSITORY INSTANCE: " + num);
+		this.users.forEach(System.err::println);
 	}
 	
 	public StatsDaoImpl(Set<UserEntity> users){
 		this.users = users;
-		System.out.println("STATS REPOSITORY CONTENT:");
-		this.users.forEach(System.out::println);
+		int num = DatabaseInstCounter.statsDaoCount ++;
+		System.err.println("STATS REPOSITORY INSTANCE: " + num);
+		this.users.forEach(System.err::println);
 	}
 	
 	

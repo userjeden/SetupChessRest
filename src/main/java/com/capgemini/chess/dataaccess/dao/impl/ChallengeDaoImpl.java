@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 import org.springframework.stereotype.Repository;
+
+import com.capgemini.chess.DatabaseInstCounter;
 import com.capgemini.chess.dataaccess.dao.ChallengeDao;
 import com.capgemini.chess.dataaccess.entities.ChallengeEntity;
 import com.capgemini.chess.enums.ChallengeStatus;
@@ -17,14 +19,16 @@ public class ChallengeDaoImpl implements ChallengeDao {
 
 	public ChallengeDaoImpl() {
 		this.challenges = new HashSet<>();
-		System.out.println("CHALLENGE REPOSITORY CONTENT:");
-		this.challenges.forEach(System.out::println);
+		int num = DatabaseInstCounter.challengeDaoCount ++;
+		System.err.println("CHALLENGE REPOSITORY INSTANCE: " + num);
+		this.challenges.forEach(System.err::println);
 	}
 	
 	public ChallengeDaoImpl(Set<ChallengeEntity> challenges) {
 		this.challenges = challenges;
-		System.out.println("CHALLENGE REPOSITORY CONTENT:");
-		this.challenges.forEach(System.out::println);
+		int num = DatabaseInstCounter.challengeDaoCount ++;
+		System.err.println("CHALLENGE REPOSITORY INSTANCE: " + num);
+		this.challenges.forEach(System.err::println);
 	}
 	
 

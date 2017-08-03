@@ -16,11 +16,11 @@ import com.capgemini.chess.service.to.StatsTO;
 
 @Controller
 @ResponseBody
-public class ChessUserRestService {
+public class UserRestService {
 
 	@Autowired
 	UserService userService;
-	
+
 	
 	@RequestMapping(value = "/challenge", method = RequestMethod.GET)
 	public List<ChallengeTO> getSuggestFivePossibleChallenges(@RequestParam ("id") Long id) 

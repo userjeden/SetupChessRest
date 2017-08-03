@@ -4,9 +4,12 @@ import java.util.List;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.annotation.DirtiesContext;
+import org.springframework.test.annotation.DirtiesContext.ClassMode;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import com.capgemini.chess.ChessApplication;
+import com.capgemini.chess.DatabaseMockupObject;
 import com.capgemini.chess.enums.ChallengeStatus;
 import com.capgemini.chess.service.NoSuchUserException;
 import com.capgemini.chess.service.UserService;
@@ -14,8 +17,9 @@ import com.capgemini.chess.service.to.ChallengeTO;
 import com.capgemini.chess.service.to.StatsTO;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = {DatabaseConfigurationForTest.class, ChessApplication.class})
-public class GameSetupServiceImplTest {
+@ContextConfiguration(classes = {DatabaseMockupObject.class, ChessApplication.class})
+@DirtiesContext(classMode = ClassMode.AFTER_CLASS)
+public class UserServiceImplTest {
 
 	
 	@Autowired

@@ -3,6 +3,7 @@ import com.capgemini.chess.enums.ChallengeStatus;
 
 public class ChallengeTO {
 
+	@SuppressWarnings("unused")
 	private Long id;
 	private Long callingUser;
 	private Long defendingUser;

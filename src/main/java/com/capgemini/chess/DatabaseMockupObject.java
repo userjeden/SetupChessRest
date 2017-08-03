@@ -4,7 +4,6 @@ import java.util.Set;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
-
 import com.capgemini.chess.dataaccess.dao.ChallengeDao;
 import com.capgemini.chess.dataaccess.dao.StatsDao;
 import com.capgemini.chess.dataaccess.dao.UserDao;
@@ -16,7 +15,7 @@ import com.capgemini.chess.dataaccess.entities.UserEntity;
 import com.capgemini.chess.enums.ChallengeStatus;
 
 @Configuration
-public class DatabaseConfigurationForTest {
+public class DatabaseMockupObject {
 	
 	@Bean
 	@Primary

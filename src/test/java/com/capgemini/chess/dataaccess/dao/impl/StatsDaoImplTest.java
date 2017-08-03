@@ -5,19 +5,18 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.runners.MockitoJUnitRunner;
 
+import com.capgemini.chess.DatabaseMockupObject;
 import com.capgemini.chess.dataaccess.dao.StatsDao;
-import com.capgemini.chess.service.impl.DatabaseConfigurationForTest;
 import com.capgemini.chess.service.to.StatsTO;
 
 @RunWith(MockitoJUnitRunner.class)
 public class StatsDaoImplTest {
 
-	
 	private StatsDao statsDao;
 
 	@Before
 	public void prepareStatsDao(){
-		DatabaseConfigurationForTest daoConfig = new DatabaseConfigurationForTest();
+		DatabaseMockupObject daoConfig = new DatabaseMockupObject();
 		statsDao = daoConfig.prepareStatsDao();
 	}
 	

@@ -34,7 +34,14 @@ public class ChallengesServiceImpl implements ChallengesService {
 	
 	
 	@Override
-	public ChallengeTO setupChallenge(Long defendingId, Long callingId) {
+	public ChallengeTO setupChallenge(Long defendingId, Long callingId) throws NoSuchUserException {
+		UserTO checkUserA = mySelfUserLookup(defendingId);
+		UserTO checkUserB = mySelfUserLookup(callingId);
+		if(checkUserA == null){
+			throw new NoSuchUserException("non-existing user: " + defendingId);
+		}else if(checkUserB == null){
+			throw new NoSuchUserException("non-existing user: " + callingId);
+		}
 		return (challengeDao.checkIfContraChallengeExists(defendingId, callingId)) ? 
 				challengeDao.acceptExistContraChallenge(defendingId, callingId) : 
 					challengeDao.setupNewChallenge(defendingId, callingId);

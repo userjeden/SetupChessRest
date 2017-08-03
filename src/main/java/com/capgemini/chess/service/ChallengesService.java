@@ -10,7 +10,7 @@ public interface ChallengesService {
 	
 	public List<ChallengeTO> suggestFivePossibleChallenges(Long myselfId) throws NoSuchUserException;
 
-	public ChallengeTO setupChallenge(Long defendingId, Long callingId);
+	public ChallengeTO setupChallenge(Long defendingId, Long callingId) throws NoSuchUserException;
 
 	public List<ChallengeTO> getChallengesByStatus(ChallengeStatus challengeStatus);
 

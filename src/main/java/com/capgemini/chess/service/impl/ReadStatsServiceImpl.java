@@ -43,8 +43,10 @@ public class ReadStatsServiceImpl implements ReadStatsService {
 	@Override
 	public List<StatsTO> getStatsByID(Long[] userIds) throws NoSuchUserException {
 		List<StatsTO> statsList = statsDao.readStatsByID(userIds);
-		if(statsList.size() != userIds.length){
-			throw new NoSuchUserException("non-existing user");
+		for(StatsTO stats : statsList){
+			if(stats == null){
+				throw new NoSuchUserException("non-existing user in array");
+			}
 		}
 		return statsList;
 	}
