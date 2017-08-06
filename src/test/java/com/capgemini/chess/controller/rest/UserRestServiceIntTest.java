@@ -62,7 +62,7 @@ public class UserRestServiceIntTest {
 	
 	
 	@Test
-	public void shouldChallengePOSThaveProperSize() throws Exception {
+	public void shouldChallengePOSThaveExistRepresent() throws Exception {
 
 		// when
 		ResultActions response = mockMvc.perform(post("/challenge")
@@ -90,7 +90,7 @@ public class UserRestServiceIntTest {
 	
 	
 	@Test
-	public void shouldStatsGEThaveProperSize() throws Exception {
+	public void shouldStatsGEThaveProperContent() throws Exception {
 		
 		// when
 		ResultActions response = mockMvc.perform(get("/stats")
@@ -139,7 +139,7 @@ public class UserRestServiceIntTest {
 	
 	
 	@Test
-	public void shouldStatsGETtellClientError() throws Exception {
+	public void shouldStatsGETreturnClientError() throws Exception {
 		
 		// when
 		ResultActions response = mockMvc.perform(get("/stats").param("fakeparam", "1"));
