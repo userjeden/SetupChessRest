@@ -20,15 +20,15 @@ public class ChallengeDaoImpl implements ChallengeDao {
 	public ChallengeDaoImpl() {
 		this.challenges = new HashSet<>();
 		int num = DatabaseInstCounter.challengeDaoCount ++;
-		System.err.println("CHALLENGE REPOSITORY INSTANCE: " + num);
-		this.challenges.forEach(System.err::println);
+		System.out.println("CHALLENGE REPOSITORY INSTANCE: " + num);
+		this.challenges.forEach(System.out::println);
 	}
 	
 	public ChallengeDaoImpl(Set<ChallengeEntity> challenges) {
 		this.challenges = challenges;
 		int num = DatabaseInstCounter.challengeDaoCount ++;
-		System.err.println("CHALLENGE REPOSITORY INSTANCE: " + num);
-		this.challenges.forEach(System.err::println);
+		System.out.println("CHALLENGE REPOSITORY INSTANCE: " + num);
+		this.challenges.forEach(System.out::println);
 	}
 	
 

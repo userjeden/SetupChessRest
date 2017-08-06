@@ -23,20 +23,18 @@ public class UserRestService {
 
 	
 	@RequestMapping(value = "/challenge", method = RequestMethod.GET)
-	public List<ChallengeTO> getSuggestFivePossibleChallenges(@RequestParam ("id") Long id) 
-			throws NoSuchUserException {
+	public List<ChallengeTO> getChallengeSuggestions(@RequestParam ("id") Long id) throws NoSuchUserException {
 		return userService.suggestFivePossibleChallenges(id);
 	}
 	
 	@RequestMapping(value = "/challenge", method = RequestMethod.POST)
 	public ChallengeTO postSetupChallenge(@RequestParam ("defId") Long defId, 
-			@RequestParam ("callId") Long callId) throws NoSuchUserException {
+			                         @RequestParam ("callId") Long callId) throws NoSuchUserException {
 		return userService.setupChallenge(defId, callId);
 	}
 	
 	@RequestMapping(value = "/stats", method = RequestMethod.GET)
-	public List<StatsTO> getUserStats(@RequestParam ("userId") Long[] userIds) 
-			throws NoSuchUserException{
+	public List<StatsTO> getUserStats(@RequestParam ("userId") Long[] userIds) throws NoSuchUserException{
 		return userService.showUserStats(userIds);
 	}
 	

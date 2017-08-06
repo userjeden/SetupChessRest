@@ -10,13 +10,13 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.test.annotation.DirtiesContext;
-import org.springframework.test.annotation.DirtiesContext.ClassMode;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+
 import com.capgemini.chess.ChessApplication;
 import com.capgemini.chess.DatabaseMockupObject;
 import com.capgemini.chess.service.to.ChallengeTO;
@@ -25,9 +25,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {DatabaseMockupObject.class, ChessApplication.class})
-@DirtiesContext(classMode = ClassMode.AFTER_CLASS)
 @WebAppConfiguration
-public class UpkeepRestServiceTest {
+@DirtiesContext
+public class UpkeepRestServiceIntTest {
 
     @Autowired
     private UpkeepRestService upkeepRestService;
@@ -87,3 +87,4 @@ public class UpkeepRestServiceTest {
 	}
 	
 }
+

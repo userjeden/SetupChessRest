@@ -19,15 +19,15 @@ public class StatsDaoImpl implements StatsDao {
 	public StatsDaoImpl() {
 		this.users = new HashSet<>();
 		int num = DatabaseInstCounter.statsDaoCount ++;
-		System.err.println("STATS REPOSITORY INSTANCE: " + num);
-		this.users.forEach(System.err::println);
+		System.out.println("STATS REPOSITORY INSTANCE: " + num);
+		this.users.forEach(System.out::println);
 	}
 	
 	public StatsDaoImpl(Set<UserEntity> users){
 		this.users = users;
 		int num = DatabaseInstCounter.statsDaoCount ++;
-		System.err.println("STATS REPOSITORY INSTANCE: " + num);
-		this.users.forEach(System.err::println);
+		System.out.println("STATS REPOSITORY INSTANCE: " + num);
+		this.users.forEach(System.out::println);
 	}
 	
 	

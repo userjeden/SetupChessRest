@@ -7,7 +7,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.annotation.DirtiesContext;
-import org.springframework.test.annotation.DirtiesContext.ClassMode;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
@@ -21,9 +20,9 @@ import com.capgemini.chess.DatabaseMockupObject;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {DatabaseMockupObject.class, ChessApplication.class})
-@DirtiesContext(classMode = ClassMode.AFTER_CLASS)
 @WebAppConfiguration
-public class UserRestServiceTest {
+@DirtiesContext
+public class UserRestServiceIntTest {
 
     @Autowired
     private UserRestService userRestService;
@@ -121,7 +120,7 @@ public class UserRestServiceTest {
 		
 		// when
 		ResultActions response = mockMvc.perform(post("/challenge")
-				.param("defId", "6").param("callId", "7"));
+				.param("defId", "6").param("callId", "3"));
 		
 		// then
 		response.andExpect(status().is5xxServerError());

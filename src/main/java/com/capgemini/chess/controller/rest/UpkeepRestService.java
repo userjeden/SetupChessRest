@@ -22,15 +22,13 @@ public class UpkeepRestService {
 	
 	
 	@RequestMapping(value = "/challenge", method = RequestMethod.GET)
-	public List<ChallengeTO> getChallengesByStatus(@RequestParam ("status") 
-	        String status) throws NoSuchChallException {
+	public List<ChallengeTO> getChallengesByStatus(@RequestParam ("status") String status) throws NoSuchChallException {
 		ChallengeStatus challengestatus = ChallengeStatus.valueOf(status.toUpperCase());
 		return upkeepService.getChallengesByStatus(challengestatus);
 	}
 	
 	@RequestMapping(value = "/challenge", method = RequestMethod.DELETE)
-	public void deleteChallenge(@RequestBody ChallengeTO challenge) 
-			throws NoSuchChallException{
+	public void deleteChallenge(@RequestBody ChallengeTO challenge) throws NoSuchChallException{
 		upkeepService.deleteChallenge(challenge);
 	}
 	

@@ -19,15 +19,15 @@ public class UserDaoImpl implements UserDao {
 	public UserDaoImpl() {
 		this.users = new HashSet<>();
 		int num = DatabaseInstCounter.userDaoCount ++;
-		System.err.println("USER REPOSITORY INSTANCE: " + num);
-		this.users.forEach(System.err::println);
+		System.out.println("USER REPOSITORY INSTANCE: " + num);
+		this.users.forEach(System.out::println);
 	}
 	
 	public UserDaoImpl(Set<UserEntity> users){
 		this.users = users;
 		int num = DatabaseInstCounter.userDaoCount ++;
-		System.err.println("USER REPOSITORY INSTANCE: " + num);
-		this.users.forEach(System.err::println);
+		System.out.println("USER REPOSITORY INSTANCE: " + num);
+		this.users.forEach(System.out::println);
 	}
 
 	
